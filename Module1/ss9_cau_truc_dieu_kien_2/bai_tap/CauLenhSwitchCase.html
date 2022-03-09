@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th> <input id="nhapThang" type="text" > </th>
+        <th> <input type="button" value="Tính Số Ngày" onclick="tinhSoNgay()"> </th>
+    </tr>
+</table>
+<script>
+    function tinhSoNgay() {
+        let giaTriThang = parseInt(document.getElementById("nhapThang").value);
+        switch (giaTriThang) {
+            case 1:
+            case 4:
+            case 6:
+            case 8:
+            case 10:
+            case 12:
+                let ketQua = 31;
+                document.write("Tháng " + giaTriThang + " có " + ketQua + " ngày");
+                break;
+            case 2:
+                document.write("Tháng " + giaTriThang + " có 28 ngày");
+                break;
+            case 3:
+            case 5:
+            case 7:
+            case 9:
+            case 11:
+                document.write("Tháng " + giaTriThang + " có 30 ngày");
+                break;
+            default:
+                document.write("Bạn đã nhập sai");
+
+        }
+    }
+</script>
+</body>
+</html>

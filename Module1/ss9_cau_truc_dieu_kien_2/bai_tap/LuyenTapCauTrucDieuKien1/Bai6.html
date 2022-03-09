@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let doanhThu = parseFloat(prompt("Nhap doanh thu (Trieu VND)"));
+    let hoaHong =0;
+    if(doanhThu>=500){
+        hoaHong = 0.2;
+    }
+    else if(doanhThu>=200 && doanhThu<500){
+        hoaHong = 0.12;
+    }
+    else {
+        hoaHong = 0.05;
+    }
+    hoaHong = Math.round(hoaHong*doanhThu);
+    alert("Hoa Hong duoc lam tron la:"+ hoaHong);
+</script>
+</body>
+</html>

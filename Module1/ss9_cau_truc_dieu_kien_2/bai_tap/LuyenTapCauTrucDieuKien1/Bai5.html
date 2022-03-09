@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let diemKiemTra = parseFloat(prompt("Nhap diem bai kiem tra"));
+    let diemGiuaKy = parseFloat(prompt("Nhap diem bai thi giua ky"));
+    let diemCuoiKy = parseFloat(prompt("Nhap diem bai thi cuoi ky"));
+    let diemTrungBinh = (diemKiemTra + diemGiuaKy*2 + diemCuoiKy*3)/3;
+    if(diemTrungBinh>=8 && diemTrungBinh<=10){
+        alert("Loai Gioi");
+    }
+    else if(diemTrungBinh>=7 ){
+        alert("Loai Kha");
+    }
+    else if(diemTrungBinh>=5 && diemTrungBinh<7){
+        alert("Loai Trung Binh");
+    }
+    else if(diemTrungBinh<=0 && diemTrungBinh<5){
+        alert("Rot Mon");
+    }
+    else {
+        alert("Ban da nhap sai")
+    }
+
+</script>
+</body>
+</html>

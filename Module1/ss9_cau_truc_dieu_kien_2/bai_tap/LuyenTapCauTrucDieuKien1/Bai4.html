@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let soA = parseInt(prompt("Nhap so nguyen A"));
+    let soB = parseInt(prompt("Nhap so nguyen B"));
+    let soC = parseInt(prompt("Nhap so nguyen C"));
+    let soMax = soA;
+    if(soMax<soB){
+        soMax = soB;
+        if(soMax<soC){
+            soMax = soC;
+        }
+    }
+    else{
+        if(soMax<soC){
+            soMax = soC;
+        }
+        else {
+            soMax = soA;
+        }
+    }
+    alert(soMax);
+</script>
+</body>
+</html>

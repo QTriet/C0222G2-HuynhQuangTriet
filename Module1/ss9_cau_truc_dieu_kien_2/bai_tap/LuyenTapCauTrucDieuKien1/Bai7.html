@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let soPhutGoi = parseFloat(prompt("Nhap so phut goi"));
+    let donGiaBac1 = parseFloat(800);
+    let donGiaBac2 = parseFloat(500);
+    let donGiaBac3 = parseFloat(100);
+    let donGiaApDung = parseFloat(0);
+    let soTienPhaiTra = parseFloat(0);
+    if(soPhutGoi<=20){
+        donGiaApDung=donGiaBac1;
+    }
+    else if(soPhutGoi>20 && soPhutGoi<=100){
+        donGiaApDung=donGiaBac2;
+    }
+    else {
+        donGiaApDung=donGiaBac3;
+    }
+    soTienPhaiTra=soPhutGoi*donGiaApDung;
+    alert("So Tien Phai Tra La:"+ soTienPhaiTra + "VND");
+</script>
+</body>
+</html>
