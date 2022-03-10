@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let soChuDien = parseFloat(prompt("Nhap so chu dien (kWh)"));
+    let donGiaBac1 = parseFloat(1.678);
+    let donGiaBac2 = parseFloat(1.734);
+    let donGiaBac3 = parseFloat(2.014);
+    let donGiaBac4 = parseFloat(2.536);
+    let donGiaBac5 = parseFloat(2.834);
+    let donGiaBac6 = parseFloat(2.927);
+    let donGiaApDung = parseFloat(0);
+
+    if (soChuDien>0){
+        if(soChuDien<=50){
+            donGiaApDung=donGiaBac1;
+        }
+        else if(soChuDien>50 && soChuDien<=100){
+            donGiaApDung=donGiaBac2;
+        }
+        else if(soChuDien>100 && soChuDien<=200){
+            donGiaApDung=donGiaBac3;
+        }
+        else if(soChuDien>200 && soChuDien<=300){
+            donGiaApDung=donGiaBac4;
+        }
+        else if(soChuDien>300 && soChuDien<=400){
+            donGiaApDung=donGiaBac5;
+        }
+        else{
+            donGiaApDung=donGiaBac6;
+        }
+        let soTienPhaiTra=soChuDien*donGiaApDung;
+        alert("So Tien Phai Tra La:"+ soTienPhaiTra + "VND");
+    }
+    else {
+        alert("Ban nhap sai");
+    }
+
+</script>
+</body>
+</html>

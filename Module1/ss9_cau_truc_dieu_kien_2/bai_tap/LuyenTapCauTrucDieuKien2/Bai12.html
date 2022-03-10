@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    alert("Tinh lai suat");
+    let soTienVay = parseFloat(prompt("Nhap so tien muon vay"));
+    let soThang = parseInt(prompt("Nhap so thang vay"));
+    let laiThang = parseFloat(prompt("Nhap lai hang thang"));
+    let laiThangNay =0;
+    let tongLai =0;
+    for(let i = 1; i<=soThang; i++){
+        laiThangNay= soTienVay*laiThang;
+        soTienVay+= laiThangNay;
+        tongLai +=laiThangNay;
+        console.log(laiThangNay);
+        console.log(soTienVay);
+        console.log(tongLai);
+    }
+    alert("Tong so tien lai can phai tra: " + tongLai);
+    alert("Tong so tien da vay: " + soTienVay);
+</script>
+</body>
+</html>

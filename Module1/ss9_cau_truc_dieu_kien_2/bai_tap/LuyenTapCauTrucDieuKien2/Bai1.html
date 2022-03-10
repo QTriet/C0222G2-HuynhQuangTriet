@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th> Nhap Nhiet Do Theo Do C</th> <th> Nhiet Do Theo Do F </th>
+    </tr>
+    <tr>
+        <td> <input id="doC" type="number"> </td>
+        <td><input id="doF" type="number"> </td>
+        <td> <button id="chuyenDo" onclick="chuyenDoi()"> Convert </button> </td>
+    </tr>
+</table>
+
+<p id="demoIn">  </p>
+
+<script>
+    function chuyenDoi() {
+        let doC = document.getElementById('doC').value;
+         // = parseFloat(prompt("Nhap nhiet do theo do C"));
+        let chuyenDoF= doC*(9/5) + 32;
+        document.getElementById('doF').value = chuyenDoF;
+        document.getElementById('demoIn').innerHTML = chuyenDoF;
+    }
+</script>
+</body>
+</html>

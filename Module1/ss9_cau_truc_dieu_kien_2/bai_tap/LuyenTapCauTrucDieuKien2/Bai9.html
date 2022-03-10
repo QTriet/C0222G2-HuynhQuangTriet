@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    alert("Kiem tra ba so nguyen co phai la canh cua mot tam gia hay khong?");
+    let soA = parseFloat(prompt("Nhap So A"));
+    let soB = parseFloat(prompt("Nhap So B"));
+    let soC = parseFloat(prompt("Nhap So C"));
+
+    if(soA*soB*soC>0 && soA+soB>soC && soA+soC>soB && soB+soC>soA ){
+        alert("Ba so " + soA + ", " + soB+ ", " + soC + " ban nhap la ba canh cua mot tam giac");
+    }
+    else{
+        alert("Ba so " + soA + ", " + soB+ ", " + soC + " ban nhap la ba canh cua mot tam giac");
+        }
+</script>
+</body>
+</html>

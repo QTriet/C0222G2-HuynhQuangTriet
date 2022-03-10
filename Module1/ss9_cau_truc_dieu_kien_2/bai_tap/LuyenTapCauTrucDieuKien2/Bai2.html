@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<tr>
+    <th> Nhap Do Dai Theo Met</th> <th> Do Dai Theo Feet </th>
+</tr>
+<tr>
+    <td> <input id="soMet" type="number"> </td>
+    <td><input id="soFeet" type="number"> </td>
+    <td> <button id="chuyenDoiChieuDai" onclick="chuyenDoi()"> Convert </button> </td>
+</tr>
+</table>
+
+<p id="demoIn">  </p>
+
+<script>
+    function chuyenDoi() {
+        let soMet = document.getElementById('soMet').value;
+        let chuyenTheoFeet= soMet*3.2808;
+        document.getElementById('soFeet').value = chuyenTheoFeet;
+    }
+</script>
+</body>
+</html>

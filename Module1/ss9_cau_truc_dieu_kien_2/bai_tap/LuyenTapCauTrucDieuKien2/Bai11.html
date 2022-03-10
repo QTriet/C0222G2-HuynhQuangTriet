@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    alert("Tinh thue thu nhap ca nhan theo thang");
+    let luongThang = parseFloat(prompt("Nhap luong thang (Trieu Dong)"));
+    let thueBac1 = parseFloat(0.05);
+    let thueBac2 = parseFloat(0.1);
+    let thueBac3 = parseFloat(0.15);
+    let thueBac4 = parseFloat(0.2);
+    let thueBac5 = parseFloat(0.25);
+    let thueBac6 = parseFloat(0.3);
+    let thueBac7 = parseFloat(0.35);
+    let bacThueApDung;
+
+
+    if (luongThang>0){
+        if(luongThang<=5){
+            bacThueApDung=thueBac1;
+        }
+        else if(luongThang>5 && luongThang<=10){
+            bacThueApDung=thueBac2;
+        }
+        else if(luongThang>10 && luongThang<=18){
+            bacThueApDung=thueBac3;
+        }
+        else if(luongThang>18 && luongThang<=32){
+            bacThueApDung=thueBac4;
+        }
+        else if(luongThang>32 && luongThang<=52){
+            bacThueApDung=thueBac5;
+        }
+        else if(luongThang>52 && luongThang<=80){
+            bacThueApDung=thueBac6;
+        }
+        else{
+            bacThueApDung=thueBac7;
+        }
+        let soTienThue = Math.round(parseFloat(luongThang*bacThueApDung));
+        alert("So Tien Phai Tra La: "+ soTienThue + " VND");
+    }
+    else {
+        alert("Ban nhap sai");
+    }
+
+</script>
+</body>
+</html>

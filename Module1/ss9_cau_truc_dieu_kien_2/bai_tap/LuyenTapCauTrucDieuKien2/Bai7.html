@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    alert("Giai phuong trinh bac 2: Ax2+Bx+C=0 (a≠0). Tim x?");
+    let soA = parseFloat(prompt("Nhap So A"));
+    let soB = parseFloat(prompt("Nhap So B"));
+    let soC = parseFloat(prompt("Nhap So C"));
+    let delta = parseFloat(Math.pow(soB,2)-4*soA*soC);
+    if(soA===0){
+        alert("Ban da nhap sai. A phai khac 0");
+    }
+    else{
+
+        if (delta<0){
+            alert("Phuong trinh vo nghiem");
+        }
+        else if (delta===0){
+            let dapAn=(-soB)/(2*soA);
+            alert("Phuong trinh co 1 nghiem");
+            alert("Nghiem 1 la: " + dapAn);
+        }
+        else {
+            let dapAn1=(-soB+(Math.sqrt(delta)))/(2*soA);
+            let dapAn2=(-soB-(Math.sqrt(delta)))/(2*soA);
+            alert("Phuong trinh co 2 nghiem");
+            alert("Nghiem 1 la:" + dapAn1);
+            alert("Nghiem 2 la:" + dapAn2);
+        }
+
+    }
+</script>
+</body>
+</html>
