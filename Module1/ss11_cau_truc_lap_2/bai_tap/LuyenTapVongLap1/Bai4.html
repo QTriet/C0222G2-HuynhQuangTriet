@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let so1=0;
+    let so2=1;
+    let soMoi=0;
+    for(let i=3; ;i++){
+        soMoi=so1+so2;
+        so1=so2;
+        so2=soMoi;
+        if (soMoi%5==0){
+            document.write(soMoi);
+            break;
+        }
+    }
+</script>
+</body>
+</html>

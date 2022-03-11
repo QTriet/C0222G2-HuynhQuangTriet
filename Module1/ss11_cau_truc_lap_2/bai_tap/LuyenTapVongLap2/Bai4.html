@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    for(let i=1;i<8;i++){
+        if(i===1 || i===7) {
+            for (let k = 0; k < 21; k++) {
+                document.write("*");
+            }
+        }
+        else {
+                document.write("*");
+                for (let m=0;m<19;m++){
+                    document.write("&nbsp&nbsp");
+                }
+                document.write("*");
+        }
+        document.write("<br>");
+    }
+
+</script>
+</body>
+</html>

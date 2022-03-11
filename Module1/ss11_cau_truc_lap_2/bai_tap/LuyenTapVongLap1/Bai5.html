@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let tong20So=0;
+    let so1=0;
+    let so2=1;
+    let soMoi=0;
+    tong20So=so1+so2;
+    for(let i=3;i<=20 ;i++){
+        soMoi=so1+so2;
+        so1=so2;
+        so2=soMoi;
+        tong20So+=soMoi;
+    }
+    document.write(tong20So);
+</script>
+</body>
+</html>

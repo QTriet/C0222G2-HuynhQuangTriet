@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let so1=0;
+    let so2=1;
+    let soMoi=0;
+    let soLuongSo=parseInt(prompt("Mời bạn nhập vào số lượng số bạn muốn in ra"));
+    document.write(so1);
+    document.write("&nbsp&nbsp&nbsp");
+    document.write(so2);
+    document.write("&nbsp&nbsp&nbsp");
+    for(let i=3; i<=soLuongSo;i++){
+        soMoi=so1+so2;
+        so1=so2;
+        so2=soMoi;
+        document.write(soMoi);
+        document.write("&nbsp&nbsp&nbsp");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let soNhap=parseInt(prompt("Mời Bạn Nhập Số Nguyên Dương"));
+    let ketQua=1;
+    //let soLienSau=1;
+    if(soNhap<0){
+        alert("Bạn đã nhập sai!");
+    }
+    else {
+        if (soNhap=== 1 || soNhap===0){
+            ketQua=1;
+        }
+        else {
+            for ( ;soNhap>1 ;soNhap-- ){
+                ketQua=ketQua*soNhap;
+            }
+        }
+    }
+    alert(ketQua);
+
+</script>
+</body>
+</html>

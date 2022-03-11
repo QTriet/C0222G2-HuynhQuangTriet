@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let i=parseInt(prompt("Nhap truong hop ban muon in:"));
+    switch (i) {
+        case 1:
+            for(let i=1;i<6;i++){
+                for (let j=0;j<i;j++){
+                    document.write("*");
+                }
+                document.write("<br>");
+            }
+        case 2:
+            for(let i=5;i>0;i--){
+                for (let j=i;j>0;j--){
+                    document.write("*");
+                }
+                document.write("<br>");
+            }
+        case 3:
+            let k=8;
+            for(let i=1;i<6;i++){
+                for (m=k;m>0;m--){
+                    document.write("&nbsp");
+                }
+                for (let j=0;j<i;j++){
+                    document.write("*");
+                }
+                document.write("<br>");
+                k-=2;
+            }
+        case 4:
+            let n=0;
+            for(let i=5;i>0;i--){
+                for (m=0;m<n;m++){
+                    document.write("&nbsp");
+                }
+                for (let j=i;j>0;j--){
+                    document.write("*");
+                }
+                document.write("<br>");
+                n+=2;
+            }
+
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <h2><button type="button" id="choiGame" onclick="doanSo()"> Play </button></h2>
+</table>
+<script>
+    function doanSo() {
+        alert("Mời nhập khoảng giá trị bạn chọn.");
+        let bienDuoi =parseFloat(prompt("Giá trị thấp nhất (giới hạn là số thập phân 1 chữ số)"));
+        let bienTren =parseFloat(prompt("Giá trị cao nhất (giới hạn là số thập phân 1 chữ số)"));
+        let soRandom = (Math.random()*(bienTren - bienDuoi)+bienDuoi).toFixed(1);
+        //Vì Random không bao giờ trả về giá trị là số 1 nên để kết quả trả về bao gồm cả biên trên thì ta nên tìm cách
+        //làm tròn kết quả để lấy được biên trên: .ToFixed(số số sau dấu phẩy)
+        //let soTuChon =parseFloat(prompt("Mời nhập số bạn đoán (giới hạn là số thập phân 1 chữ số)"));
+        let i=0;
+        while (i<3){
+            let soTuChon =parseFloat(prompt("Mời nhập số bạn đoán (Giới hạn là số thập phân 1 chữ số)"));
+            if (soTuChon!=soRandom) {
+                alert("Bạn đã đoán sai!");
+                i++;
+                if (i===3) {
+                    alert("Bạn đã đoán sai 3 lần!");
+                    alert("Đáp án là: " + soRandom);
+                }
+            }
+            else {
+                alert("Bạn đã đoán đúng!");
+                break;
+            }
+        }
+
+    }
+</script>
+</body>
+</html>
