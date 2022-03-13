@@ -5,6 +5,30 @@
     <title>Title</title>
 </head>
 <body>
-
+<script>
+    let soluongSoNT = parseInt(prompt("Moi Nhap So Luong So Nguyen To Ban Muon In:"));
+    let flag = false;
+    document.write("So Nguyen To Thu 1 la: 2");
+    document.write("<br>");
+    let count = 1;
+    for (let i=3;count<=soluongSoNT-1;i++){
+        for (let j=2;j<i;j++){
+            if(i%j===0){
+                flag = false;
+                break;
+            }
+            else {
+                if (j == i-1){
+                    flag = true;
+                }
+            }
+        }
+        if (flag===true){
+            count++;
+            document.write("So Nguyen To Thu "+count+" la so "+i);
+            document.write("<br>");
+        }
+    }
+</script>
 </body>
 </html>
