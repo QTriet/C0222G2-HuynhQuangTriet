@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <th><h2> TỪ ĐIỂN </h2></th>
+    <tr>
+        <td><input type="text" id="tuNhap"></td>
+        <td>
+            <button id="timTu1" onclick="traTuVE()"> Tra Tu Viet => English</button>
+        </td>
+        <td>
+            <button id="timTu2" onclick="traTuEV()"> Tra Tu English => Viet</button>
+        </td>
+    </tr>
+</table>
+<script>
+    arrayViet = ["xin chao", "tam biet", "cam on","tot", "xau"];
+    arrayEnglish = ["hello", "good bye", "thank", "good", "bad"];
+
+    function traTuVE() {
+        let tuNhapVao1 = document.getElementById("tuNhap").value;
+        let i =arrayViet.indexOf(tuNhapVao1);
+        if (i!==-1){
+            document.write(arrayEnglish[i]);
+        }
+        else {
+            document.write("Tu ban tim khong co trong tu dien");
+        }
+    }
+    function traTuEV() {
+        let tuNhapVao2 = document.getElementById("tuNhap").value;
+        let i =arrayEnglish.indexOf(tuNhapVao2);
+        if (i!==-1){
+            document.write(arrayViet[i]);
+        }
+        else {
+            document.write("Tu ban tim khong co trong tu dien");
+        }
+
+    }
+</script>
+
+
+</body>
+</html>

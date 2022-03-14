@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let soPhanTu = parseInt(prompt("Nhap so luong phan tu cua mang."));
+    const array1 = new Array(soPhanTu);
+    for (let i = 0; i < array1.length; i++) {
+        array1[i] = parseInt(prompt("Nhap phan tu thu " + (i + 1)));
+    }
+    const result = [array1[0]];
+    for (let x = 1; x < array1.length; x++) {
+        if ((array1[x - 1] % 2 === 0) && (array1[x] % 2 === 0)) {
+            result.push('-', array1[x]);
+        } else {
+            result.push(array1[x]);
+        }
+    }
+
+    console.log(result.join(''));
+    document.write(array1);
+    document.write("<br>");
+    document.write(result.join(''));
+</script>
+</body>
+</html>

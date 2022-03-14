@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array1 = new Array(10);
+    alert("Nhap vao mang 10 so nguyen.");
+    for (let i = 0; i<array1.length;i++){
+        array1[i] = parseInt(prompt("Nhap phan tu thu "+ (i+1)));
+    }
+    document.write(array1);
+    document.write("<br>");
+    let soV= parseInt(prompt("Nhap so nguyen V"));
+    let j =0;
+    while(j<array1.length){
+        if(soV===array1[j]){
+            document.write("V is in the array.");
+            document.write("<br>");
+            break;
+        }
+        j++;
+    }
+    while (j<array1.length){
+        array1[j]=array1[j+1];
+        j++;
+    }
+    document.write(array1);
+</script>
+</body>
+</html>

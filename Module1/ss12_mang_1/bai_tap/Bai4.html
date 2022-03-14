@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let soPhanTu = parseInt(prompt("Nhap so luong phan tu cua mang!"));
+    let array1 = new Array(soPhanTu);
+    for (let i = 0; i<array1.length;i++){
+        array1[i] = parseInt(prompt("Nhap phan tu thu "+ (i+1)));
+    }
+    let indexFirst =0;
+    let indexLast = array1.length-1;
+    while (indexFirst<indexLast){
+        let a = array1[indexFirst];
+        array1[indexFirst] = array1[indexLast];
+        array1[indexLast]=a;
+        indexFirst++;
+        indexLast--;
+
+    }
+</script>
+</body>
+</html>

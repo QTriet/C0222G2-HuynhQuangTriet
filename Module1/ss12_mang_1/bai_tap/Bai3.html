@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array1 = Array (10,3,5,4,8);
+    let max = array1[0];
+    let indexMax =parseInt();
+    let count = parseInt(0);
+    for ( let m =0;m<array1.length;m++) {
+        if (array1[m] >= max) {
+            max = array1[m];
+            indexMax = m;
+        }
+        count+= array1[m];
+    }
+    document.write(array1);
+    document.write("<br>");
+    document.write("<br>");
+    document.write("Phan tu lon nhat "+max+ " tai vi tri index "+indexMax);
+    document.write("<br>");
+    //document.write("Gia tri trung binh cua cac phan tu trong mang"+(count/array1.length));
+    document.write("Gia tri trung binh cua cac phan tu trong mang "+count);
+</script>
+</body>
+</html>

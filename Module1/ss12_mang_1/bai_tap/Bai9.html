@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrayA = new Array(10);
+    let arrayB = new Array(10);
+    alert("Nhap vao mang 10 so nguyen cua mang A.");
+    for (let i = 0; i<arrayA.length;i++){
+        arrayA[i] = parseInt(prompt("Nhap phan tu thu "+ (i+1)));
+    }
+
+    alert("Nhap vao mang 10 so nguyen cua mang B.");
+    for (let j = 0; j<arrayB.length;j++){
+        arrayB[j] = parseInt(prompt("Nhap phan tu thu "+ (j+1)));
+    }
+    let arrayC = new Array(20);
+    arrayC = arrayA.concat(arrayB);
+    document.write("Mang A la :")
+    document.write(arrayA);
+    document.write("<br>");
+    document.write("Mang B la :")
+    document.write(arrayB);
+    document.write("<br>");
+    document.write("Mang C la :")
+    document.write(arrayC);
+</script>
+</body>
+</html>

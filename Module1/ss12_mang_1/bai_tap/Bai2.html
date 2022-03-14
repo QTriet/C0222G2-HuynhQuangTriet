@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let soPhanTu = parseInt(prompt("Nhap so luong phan tu cua mang."+ "\n"+"Goi y: 10 phan tu"));
+    let array1 = new Array(soPhanTu);
+    let flag = true;
+    array1[0] = parseInt(prompt("Nhap phan tu thu 1: "));
+    for (let i = 1; i<array1.length;i++){
+        while (flag){
+            array1[i] = parseInt(prompt("Nhap phan tu thu "+ (i+1)));
+            for (let j=0;j<i;j++){
+                if(array1[i]===array1[j]){
+                    alert("Phan tu ban vua nhap da ton tai trong mang!");
+                    flag=true;
+                    break;
+                }
+                else {
+                    if (j===i-1){
+                        flag=false;
+                    }
+                }
+            }
+        }
+        flag=true;
+    }
+    let max = parseInt(array1[0]);
+    let indexMax =parseInt();
+    for ( let m =0;m<array1.length;m++){
+        if(array1[m]>=max){
+            max = array1[m];
+            indexMax = m;
+        }
+        document.write("Index la: ");
+        document.write(m);
+        document.write("---- Gia tri array["+m+"]"+" la: "+array1[m]);
+        document.write("<br>");
+
+
+    }
+    document.write(array1);
+    document.write("<br>");
+    document.write("Phan tu lon nhat "+max+ " tai vi tri index "+indexMax);
+
+
+</script>
+</body>
+</html>

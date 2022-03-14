@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let soPhanTu = parseInt(prompt("Nhap so luong phan tu cua mang."+ "\n"+"Goi y: 10 phan tu"));
+    let array1 = new Array(soPhanTu);
+    let count = parseInt(0);
+    for (let i = 0; i<array1.length;i++){
+        array1[i] = parseInt(prompt("Nhap phan tu thu "+ (i+1)));
+        if (array1[i]>=10){
+            count++;
+        }
+    }
+    document.write(array1);
+    document.write("<br>");
+    document.write("So luong so phan tu lon hon hoac bang 10 la: "+count);
+
+
+</script>
+</body>
+</html>
