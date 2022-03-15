@@ -6,11 +6,11 @@
 </head>
 <body>
 <script>
-    let array1 = [-3, 5, -1, 3, 2, -10];
+    let array1 = 'abc-334ef5g-89jks88';
     let i=0;
     let count =0;
     while (i<array1.length){
-        if (array1[i]<0){
+        if (array1[i]=='-' && !isNaN(array1[i+1])){
             count++;
         }
         i++;
