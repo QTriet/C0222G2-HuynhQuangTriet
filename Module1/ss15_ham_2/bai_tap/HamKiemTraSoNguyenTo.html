@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    arr = [2];
+    let i = 0;
+    let flag = false;
+    let checkNum = parseInt(prompt("Nhap vao so muon kiem tra ( so <10.000)"));
+    isPrime(checkNum);
+    if (flag){
+        alert("So ban nhap vao la so nguyen to!");
+    }
+    else {
+        alert("So ban nhap vao khong phai la so nguyen to!");
+    }
+    flag = false;
+    for (i = 3; i < 10000; i++) {
+        isPrime(i);
+    }
+    document.write("Day so nguyen to nho hon 10.000 la: ");
+    document.write(arr);
+
+    function isPrime(num) {
+        for (let j = 2; j < num; j++) {
+            if (num % j === 0) {
+                flag = false;
+                break;
+            } else {
+                if (j === num - 1) {
+                    flag = true;
+                }
+            }
+        }
+        if (flag) {
+            arr.push(num);
+        }
+    }
+</script>
+</body>
+</html>

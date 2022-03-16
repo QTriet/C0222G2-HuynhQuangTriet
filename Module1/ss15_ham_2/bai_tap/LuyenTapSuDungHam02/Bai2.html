@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>
+    <button onclick="tinhChuVi(4)">Tinh chu vi</button>
+</p>
+<p><input type="button" id="dienTich" onclick="tinhDienTich()" value="Tinh dien tich"></button> </p>
+<script>
+    function tinhChuVi(banKinh) {
+        document.write("Chu vi hinh tron voi ban kinh " + banKinh + " la " + (2 * banKinh * Math.PI));
+        document.write("<br>");
+    }
+
+    function tinhDienTich() {
+        let banKinh2 = parseFloat(prompt("Nhap ban kinh"));
+        alert("Dien tich hinh tron voi ban kinh " + banKinh2 + " la " + Math.abs(banKinh2) * Math.PI);
+    }
+</script>
+</body>
+</html>

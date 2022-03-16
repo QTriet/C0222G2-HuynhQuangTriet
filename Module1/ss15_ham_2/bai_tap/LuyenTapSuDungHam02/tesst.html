@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    inputArray = [1, 1, 1];
+    console.log(solution(inputArray));
+    console.log(arr1);
+
+
+    function solution(arg1) {
+        arr1 = [arg1[0]];
+        let flag = false;
+        for (let i = 0; i<arg1.length;i++){
+            for(let j = 0; j<arr1.length;j++){
+                if(arg1[i]===arr1[j]){
+                    break
+                }
+                else {
+                    if (j===arr1.length-1){
+                        arr1.push(arg1[i]);
+                    }
+                }
+            }
+        }
+        let arr2 = Array(arg1.length);
+        for (let i =0; i<arr2.length; i++){
+            arr2[i]=0;
+        }
+        for (let i=0; i<arr1.length; i++){
+            for (let j = 0; j<arg1.length; j++){
+                if(arr1[i]===arg1[j]){
+                    arr2[i]+=1;
+                }
+            }
+        }
+        for (let i =0; i<arr2.length; i++){
+            if (arr2[i]!==0){
+                if(arr2[i]!==arr2[i+1] && arr2[i+1]!==0){
+                    flag = false;
+                    break;
+                }
+                else if(arr2[i]===arr2[i+1] && arr2[i+1]!==0){
+                    flag = true;
+                }
+                else if (arr2[2]===0){
+                    flag =true;
+                }
+            }
+        }
+        console.log(arr1);
+        return flag;
+
+    }
+</script>
+</body>
+</html>

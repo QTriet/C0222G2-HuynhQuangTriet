@@ -2,9 +2,88 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<p id="printTable"></p>
+
+<script>
+    // Tao mang 2 chieu
+    let arr = new Array(10);
+    let isPlayer1 = true;
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = new Array(10);
+        for (let j = 0; j < arr[i].length; j++) {
+            arr[i][j] = "";
+        }
+    }
+    hienThiBang();
+
+    // tao bang caro
+    function hienThiBang() {
+        let tableString = '<table border="1" style="border-color: red">';
+        tableString += '<h2> GAME CARO';
+        // tableString += '<br>';
+        for (let i = 0; i < 10; i++) {
+            tableString += '<tr>';
+            for (let j = 0; j < 10; j++) {
+                tableString += '<td style="height: 40px; width: 40px" onclick="tick(' + i + ',' + j + ')">' + arr[i][j];
+                tableString += '</td>';
+            }
+            tableString += '</tr>';
+        }
+        tableString += '</h2>';
+        tableString += '</table>';
+        document.getElementById('printTable').innerHTML = tableString;
+
+    }
+
+    function tick(i, j) {
+        if (isPlayer1 && !isTicked(i, j)) {
+            arr[i][j] = "X";
+            if (isWin("X")) {
+                alert("Nguoi choi 1 chien thang!");
+            }
+            isPlayer1 = false;
+        } else if (!isPlayer1 && !isTicked(i, j)) {
+            arr[i][j] = "O";
+            if (isWin("O")) {
+                alert("Nguoi choi 2 chien thang!");
+            }
+            isPlayer1 = true;
+        }
+        hienThiBang();
+    }
+
+    //Kiem tra xem vi tri chon da danh dau chua?
+    function isTicked(i, j) {
+        if (arr[i][j] !== "") {
+            alert("This space is ticked!");
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    //Kiem tra chien thang
+    function isWin(W) {
+        for (let i = 0; i < arr.length; i++) {
+            arr[i] = new Array(10);
+            for (let j = 0; j < arr[i].length; j++) {
+                if (arr[i][j] === W) {
+                    if (arr[i][j + 1] && arr[i][j + 2]) {
+                        return true;
+                    }if (arr[i + 1][j] && arr[i + 2][j]) {
+                        return true;
+                    }if (arr[i + 1][j + 1] && arr[i + 2][j + 2]) {
+                        return true;
+                    }
+                    }if (arr[i + 1][j - 1] && arr[i + 2][j - 2]) {
+                        return true;
+                    }
+                }
+            }
+        }
+</script>
 </body>
 </html>

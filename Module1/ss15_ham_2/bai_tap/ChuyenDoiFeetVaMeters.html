@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <td><input id="nhapSo1" type="number"></td>
+        <td><button onclick="footToMeter()">Feet To Meters</button></td>
+        <td> <input id="traSo1" type="number"> </td>
+    </tr>
+    <tr>
+        <td><input id="nhapSo2" type="number" oninput="meterToFeet(this.value)"></td>
+        <td>Meters To Feet</td>
+        <td><input id="traSo2" type="number"></td>
+    </tr>
+
+</table>
+<script>
+
+    function footToMeter(){
+        let num = document.getElementById("nhapSo1").value;
+        document.getElementById("traSo1").value =0.35*num;
+    }
+    function meterToFeet(num){
+        document.getElementById("traSo2").value =3.279 *num;
+    }
+
+</script>
+</body>
+</html>

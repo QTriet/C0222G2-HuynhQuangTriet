@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    arr1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    arr2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+    let nameStar = prompt("Nhap ten ngoi sao.");
+    let result = parseInt(checkStar(nameStar));
+    if (result !== -1) {
+        alert(arr2[result]);
+    }
+
+
+    function checkStar(nameS) {
+        for (let i = 0; i < arr1.length; i++) {
+            if (nameS === arr1[i]) {
+                return i;
+            } else {
+                if (i === arr1.length - 1) {
+                    alert("Khong tim thay ngoi sao ban nhap.");
+                    return -1;
+                }
+            }
+        }
+    }
+
+
+</script>
+</body>
+</html>
