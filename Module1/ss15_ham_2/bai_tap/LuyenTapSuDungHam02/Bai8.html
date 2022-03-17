@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let soPhanTu = parseInt(prompt("Nhap do dai mang so nguyen"));
+    let arrSoNguyen =Array(soPhanTu);
+    for (let i = 0; i < arrSoNguyen.length; i++) {
+        arrSoNguyen[i] = prompt("Nhap so nguyen bat ky thu "+(i+1));
+        if (arrSoNguyen[i] != parseInt(arrSoNguyen[i])){
+            alert("Gia tri vua nhap khong phai la so nguyen");
+            break;
+        }
+    }
+    document.write("Mang ban dau: "+arrSoNguyen);
+    document.write("<br>");
+    document.write("Mang dao nguoc: "+changeNumPos(arrSoNguyen));
+
+
+    function changeNumPos(arrSN) {
+        let firstIndex =0;
+        let lastIndex = arrSN.length-1;
+        let numBuffer = 0;
+        while (firstIndex<lastIndex) {
+            numBuffer = arrSN[firstIndex];
+            arrSN[firstIndex] = arrSN[lastIndex];
+            arrSN[lastIndex] = numBuffer;
+            firstIndex++;
+            lastIndex--;
+        }
+        return arrSN;
+    }
+</script>
+</body>
+</html>

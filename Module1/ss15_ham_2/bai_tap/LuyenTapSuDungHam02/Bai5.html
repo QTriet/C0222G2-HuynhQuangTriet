@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrNum = new Array(3);
+    for (let i = 0; i < arrNum.length ; i++) {
+        arrNum[i] = prompt("Nhap so nguyen bat ky thu "+(i+1));
+        if (arrNum[i] != parseInt(arrNum[i])){
+            alert("Gia tri vua nhap khong phai la so nguyen");
+            break;
+        }
+    }
+    document.write(findMin(arrNum));
+
+    function findMin(arrN) {
+        let min = arrN[0];
+        for (let i = 1; i < arrN.length ; i++) {
+            if (arrN[i]<min){
+                min = arrN[i];
+            }
+        }
+        return min;
+    }
+</script>
+</body>
+</html>

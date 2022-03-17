@@ -7,14 +7,21 @@
 <body>
 <script>
     let num = parseInt(prompt("Nhap so nguyen bat ky"));
-    let result = tinhGiaThua(num);
+    document.write(tinhGiaThua(num));
 
     function tinhGiaThua(x) {
-        if (x===1){
-            return 1;
+        if (x>0) {
+            let ketQua = 1;
+            if (x===1){
+                return 1;
+            }
+            for (let i = 1; i <= x; i++) {
+                ketQua = i*ketQua;
+            }
+            return ketQua;
         }
-        for (let i = 0; i < ; i++) {
-
+        else {
+            alert("Moi nhap so lon hon 0!")
         }
     }
 </script>

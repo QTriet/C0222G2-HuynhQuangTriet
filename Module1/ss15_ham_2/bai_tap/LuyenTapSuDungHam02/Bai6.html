@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number1 = prompt("Nhap so bat ky:");
+    alert(checkNumber(number1));
+
+    function checkNumber(num) {
+        if (num == parseInt(num)){
+            if (num >0){
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        else {
+            return false;
+        }
+    }
+</script>
+</body>
+</html>

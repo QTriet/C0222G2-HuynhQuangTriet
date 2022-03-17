@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:width="http://www.w3.org/1999/xhtml" xmlns:height="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="width: 300px; height: 120px;">
+    <div style="width: 250px; height: 80px; background-color: lightgray ">
+        <h2 style="text-align: center"> Add New Product</h2>
+        <p>
+            <input id="productName" type="text" placeholder="New product">
+            <button onclick="addProduct()">Add</button>
+        </p>
+        <h4> Display All Products </h4>
+    </div>
+</div>
+
+
+<table border="1" style="border-collapse: collapse">
+    <tr>
+        <td style="width: 600px; height: 25px; font-weight: bold; text-align: left" colspan="4">Product Name</td>
+        <td id="totalProduct" style="width: 100px; height: 25px; font-weight: bold; text-align: right"> 9 products</td>
+    </tr>
+    <p id="createRow"></p>
+</table>
+
+
+
+<!--<table border="1" style="border-collapse: collapse">-->
+<!--    <tr>-->
+<!--        <td style="width: 300px; height: 25px; text-align: left"></td>-->
+<!--        <td style="width: 100px; height: 25px; text-align: center">-->
+<!--            <button onclick="editItem()">Edit</button>-->
+<!--        </td>-->
+<!--        <td style="width: 100px; height: 25px;"></td>-->
+<!--        <td style="width: 100px; height: 25px;text-align: center">-->
+<!--            <button onclick="deleteItem()">Delete</button>-->
+<!--        </td>-->
+<!--        <td style="width: 100px; height: 25px;"></td>-->
+<!--    </tr>-->
+<!--</table>-->
+
+
+<script>
+
+    function addProduct() {
+        let productN = document.getElementById("productName").value;
+        createRow(productN);
+
+    }
+
+    function createRow(producName) {
+        // let stringTable = '<table border="1" style="border-collapse: collapse">' +
+        //     '<tr>' +
+        //     '<td style="width: 600px; height: 25px; font-weight: bold; text-align: left" colspan="4">Product Name</td>' +
+        //     '<td id="totalProduct" style="width: 100px; height: 25px; font-weight: bold; text-align: right"> 9 products</td>' +
+        //     '</tr>';
+        let stringTable = '<tr>';
+        for (let i = 0; i < 5; i++) {
+            if (i == 0) {
+                stringTable += '<td style="width: 300px; height: 25px; text-align: left">' + producName + '</td>';
+            } else if (i == 1) {
+                stringTable += '<td style="width: 100px; height: 25px; text-align: center"><button onclick="editItem()">Edit</button></td>';
+            } else if (i == 2) {
+                stringTable += '<td style="width: 100px; height: 25px;"></td>';
+            } else if (i == 3) {
+                stringTable += '<td style="width: 100px; height: 25px;text-align: center"><button onclick="deleteItem()">Delete</button></td>';
+            } else {
+                stringTable += '<td style="width: 100px; height: 25px;"></td>';
+            }
+        }
+        stringTable += '</tr>';
+        stringTable += '</table>';
+        console.log(stringTable);
+        document.getElementById("createRow").innerHTML = stringTable;
+
+
+    }
+
+    function editItem() {
+        alert("edit");
+    }
+
+    function deleteItem() {
+        alert("delete");
+    }
+</script>
+</body>
+</html>
