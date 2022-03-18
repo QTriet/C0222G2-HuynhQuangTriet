@@ -6,44 +6,118 @@
 </head>
 <body>
 <script>
-    let MyDate = function(day, month, year) {
+    class Date {
+        constructor(day, month, year) {
+            if (dayCheck(day)){
+                this.day = day;
+            }
+            else {
+                alert("bạn nhập ngày sai!")
+            }
+            if (monthCheck(month)){
+                this.month = month;
+            }
+            else {
+                alert("bạn nhập tháng sai!")
+            }
+            if (yearCheck(year)){
+                this.year = year;
+            }
+            else {
+                alert("bạn nhập năm sai!")
+            }
+        }
 
-        this.day = day;
+        getDay() {
+            return this.day;
+        }
 
-        this.month = month;
+        getMonth() {
+            return this.month;
+        }
 
-        this.year = year;
+        getYear() {
+            return this.year;
+        }
 
-    };
-    this.getDay = function() {
-        return this.day;
-    }
-    this.getMonth = function() {
-        return this.month;
-    }
-    this.getYear = function() {
-        return this.year;
-    }
-    this.setDay = function(day) {
-        this.day  = day;
-    }
-    this.setMonth = function(month) {
-        this.month  = month;
-    }
-    this.setYear = function(year) {
-        this.year  = year;
-    }
-    let date = new MyDate(2, 2, 2007);
-    let day = date.getDay(); // 2
+        setDay(day) {
+            this.day = day;
+        }
 
-    let month = date.getMonth(); // 2
+        setMonth(month) {
+            this.month = month;
+        }
 
-    let year = date.getYear(); // 2007
-    alert(day + "/" + month + "/" + year);
-    date.setDay(10);
-    date.setMonth(10);
-    date.setYear(2019);
-    alert(day + "/" + month + "/" + year);
+        setYear(year) {
+            this.year = year;
+        }
+
+        setDate(day, month, year){
+            this.day = day;
+            this.month = month;
+            this.year = year;
+        }
+    }
+
+    let testDay = new Date(14,12, 2021 );
+    console.log(testDay);
+    console.log(testDay.getDay());
+    console.log(testDay.getMonth());
+    console.log(testDay.getYear());
+    console.log(testDay);
+    estDay.setDate(7,8,9);
+    console.log(testDay);
+
+    function intCheck(num) {
+        if (parseInt(num)==num){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    function dayCheck(day) {
+        if (intCheck(day)){
+            if (day>0 && day<32) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        else {
+            return false;
+        }
+    }
+    function monthCheck(month) {
+        if (intCheck(month)){
+            if (month>0 && month<13) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        else {
+            return false;
+        }
+    }
+    function yearCheck(year) {
+        if (intCheck(year)){
+            if (year>0) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        else {
+            return false;
+        }
+    }
+
+
 </script>
 </body>
 </html>

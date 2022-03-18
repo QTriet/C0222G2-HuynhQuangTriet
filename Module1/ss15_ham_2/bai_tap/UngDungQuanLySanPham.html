@@ -6,11 +6,11 @@
 </head>
 <body>
 <div style="width: 300px; height: 120px;">
-    <div style="width: 250px; height: 80px; background-color: lightgray ">
+    <div style="width: 250px; height: 80px; background-color: burlywood ">
         <h2 style="text-align: center"> Add New Product</h2>
         <p>
             <input id="productName" type="text" placeholder="New product">
-            <button onclick="addProduct()">Add</button>
+            <button style="background-color: aqua" onclick="addProduct()">Add</button>
         </p>
         <h4> Display All Products </h4>
     </div>
@@ -49,11 +49,11 @@
                     if (i == 0) {
                         stringTable += '<td style="width: 300px; height: 25px; text-align: left">' + arrProduct[j] + '</td>';
                     } else if (i == 1) {
-                        stringTable += '<td style="width: 100px; height: 25px; text-align: center"><button onclick="editItem('+ j +')">Edit</button></td>';
+                        stringTable += '<td style="width: 100px; height: 25px; text-align: center"><button style="background-color: greenyellow" onclick="editItem('+ j +')">Edit</button></td>';
                     } else if (i == 2) {
                         stringTable += '<td style="width: 100px; height: 25px;"></td>';
                     } else if (i == 3) {
-                        stringTable += '<td style="width: 100px; height: 25px;text-align: center"><button onclick="deleteItem('+j+')">Delete</button></td>';
+                        stringTable += '<td style="width: 100px; height: 25px;text-align: center"><button style="background-color: greenyellow" onclick="deleteItem('+j+')">Delete</button></td>';
                     } else {
                         stringTable += '<td style="width: 100px; height: 25px;"></td>';
                     }
@@ -78,8 +78,10 @@
     }
 
     function deleteItem(j) {
-        arrProduct.splice(j,1);
-        display(arrProduct);
+        if (confirm("Bạn muốn xóa sản phẩm: "+arrProduct[j])) {
+            arrProduct.splice(j,1);
+            display(arrProduct);
+        }
     }
 </script>
 </body>
