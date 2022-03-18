@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:width="http://www.w3.org/1999/xhtml" xmlns:height="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -16,74 +16,70 @@
     </div>
 </div>
 
-
-<table border="1" style="border-collapse: collapse">
-    <tr>
-        <td style="width: 600px; height: 25px; font-weight: bold; text-align: left" colspan="4">Product Name</td>
-        <td id="totalProduct" style="width: 100px; height: 25px; font-weight: bold; text-align: right"> 9 products</td>
-    </tr>
-    <p id="createRow"></p>
-</table>
-
-
-
-<!--<table border="1" style="border-collapse: collapse">-->
-<!--    <tr>-->
-<!--        <td style="width: 300px; height: 25px; text-align: left"></td>-->
-<!--        <td style="width: 100px; height: 25px; text-align: center">-->
-<!--            <button onclick="editItem()">Edit</button>-->
-<!--        </td>-->
-<!--        <td style="width: 100px; height: 25px;"></td>-->
-<!--        <td style="width: 100px; height: 25px;text-align: center">-->
-<!--            <button onclick="deleteItem()">Delete</button>-->
-<!--        </td>-->
-<!--        <td style="width: 100px; height: 25px;"></td>-->
-<!--    </tr>-->
-<!--</table>-->
-
+<p id="displayTable"></p>
 
 <script>
+    arrProduct = [];
+    display(arrProduct);
 
     function addProduct() {
-        let productN = document.getElementById("productName").value;
-        createRow(productN);
-
+        let productName = document.getElementById("productName").value;
+        arrProduct.push(productName);
+        console.log(arrProduct);
+        display(arrProduct);
+        document.getElementById("productName").value ="";
     }
 
-    function createRow(producName) {
-        // let stringTable = '<table border="1" style="border-collapse: collapse">' +
-        //     '<tr>' +
-        //     '<td style="width: 600px; height: 25px; font-weight: bold; text-align: left" colspan="4">Product Name</td>' +
-        //     '<td id="totalProduct" style="width: 100px; height: 25px; font-weight: bold; text-align: right"> 9 products</td>' +
-        //     '</tr>';
-        let stringTable = '<tr>';
-        for (let i = 0; i < 5; i++) {
-            if (i == 0) {
-                stringTable += '<td style="width: 300px; height: 25px; text-align: left">' + producName + '</td>';
-            } else if (i == 1) {
-                stringTable += '<td style="width: 100px; height: 25px; text-align: center"><button onclick="editItem()">Edit</button></td>';
-            } else if (i == 2) {
-                stringTable += '<td style="width: 100px; height: 25px;"></td>';
-            } else if (i == 3) {
-                stringTable += '<td style="width: 100px; height: 25px;text-align: center"><button onclick="deleteItem()">Delete</button></td>';
-            } else {
-                stringTable += '<td style="width: 100px; height: 25px;"></td>';
+    function display(arrProduct) {
+        let stringTable = '';
+        stringTable = '<table border="0" style="border-collapse: collapse">' +
+            '<tr style="background-color: antiquewhite">' +
+            '<td style="width: 600px; height: 25px; font-weight: bold; text-align: left" colspan="4">Product Name</td>' +
+            '<td id="totalProduct" style="width: 100px; height: 25px; font-weight: bold; text-align: right">' + arrProduct.length + ' products</td>' +
+            '</tr>';
+        if (arrProduct.length != 0) {
+            for (let j = 0; j < arrProduct.length; j++) {
+                if (j%2 == 0){
+                    stringTable += '<tr style="background-color: aliceblue">';
+                }
+                else {
+                    stringTable += '<tr style="background-color: lightgrey">';
+                }
+                for (let i = 0; i < 5; i++) {
+                    if (i == 0) {
+                        stringTable += '<td style="width: 300px; height: 25px; text-align: left">' + arrProduct[j] + '</td>';
+                    } else if (i == 1) {
+                        stringTable += '<td style="width: 100px; height: 25px; text-align: center"><button onclick="editItem('+ j +')">Edit</button></td>';
+                    } else if (i == 2) {
+                        stringTable += '<td style="width: 100px; height: 25px;"></td>';
+                    } else if (i == 3) {
+                        stringTable += '<td style="width: 100px; height: 25px;text-align: center"><button onclick="deleteItem('+j+')">Delete</button></td>';
+                    } else {
+                        stringTable += '<td style="width: 100px; height: 25px;"></td>';
+                    }
+                }
+                stringTable += '</tr>';
             }
         }
-        stringTable += '</tr>';
         stringTable += '</table>';
-        console.log(stringTable);
-        document.getElementById("createRow").innerHTML = stringTable;
-
-
+        document.getElementById("displayTable").innerHTML = stringTable;
     }
 
-    function editItem() {
-        alert("edit");
+
+    function editItem(j) {
+        newProduct = prompt("Nhập tên bạn muốn thay đổi");
+        if (newProduct!==""){
+            arrProduct[j] =newProduct;
+        }
+        else {
+            alert("Bạn cần nhập vào một tên san phẩm mới!")
+        }
+        display(arrProduct);
     }
 
-    function deleteItem() {
-        alert("delete");
+    function deleteItem(j) {
+        arrProduct.splice(j,1);
+        display(arrProduct);
     }
 </script>
 </body>
