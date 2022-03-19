@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor() {
+                this.doC;
+        }
+        converntF(doC)
+        {
+            if (checkInput(doC)) {
+                return ((9 / 5) * doC + 32);
+            }
+        }
+        converntKenvin(doC)
+        {
+            if (checkInput(doC)) {
+                return (doC + 273.15);
+            }
+        }
+    }
+    function checkInput(doC) {
+        if (doC >= -273) {
+            return true;
+        } else {
+            alert("Gia tri ban nhap khong dung!");
+            return false;
+        }
+    }
+
+    let testDoC = new Temperature();
+    document.write("Nhiet do theo do F la: "+testDoC.converntF(25));
+    document.write("<br>");
+    document.write("Nhiet do theo do K la: "+testDoC.converntKenvin(25));
+    console.log(testDoC.converntF(25));
+    console.log(testDoC.converntKenvin(25));
+</script>
+</body>
+</html>

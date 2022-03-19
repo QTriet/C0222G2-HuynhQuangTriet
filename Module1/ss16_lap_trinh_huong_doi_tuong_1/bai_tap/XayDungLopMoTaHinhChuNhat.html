@@ -8,25 +8,29 @@
 <body>
 <script>
     class Rectangle {
-        constructor(dai,rong) {
+        constructor(dai, rong) {
             this.dai = dai;
             this.rong = rong;
         }
-        getDai(){
+
+        getDai() {
             return this.dai;
         }
-        getRong(){
+
+        getRong() {
             return this.rong;
         }
-        dienTich(dai, rong){
-            return dai*rong;
+
+        dienTich(dai, rong) {
+            return dai * rong;
         }
-        chuVi(dai, rong){
-            return (dai+rong)*2;
+
+        chuVi(dai, rong) {
+            return (dai + rong) * 2;
         }
     }
 
-    let demoRectangle = new Rectangle(50,100);
+    let demoRectangle = new Rectangle(50, 100);
     let c = document.getElementById("myCanvas");
     let ctx = c.getContext("2d");
     ctx.fillRect(50, 50, demoRectangle.getDai(), demoRectangle.getRong());
