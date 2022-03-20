@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <canvas id="myCanvas" width="1000" height="1000"></canvas>
+    <canvas id="myCanvas" width="2000" height="2000"></canvas>
 </head>
 <body>
 <script>
@@ -28,24 +28,26 @@
         chuVi(dai, rong) {
             return (dai + rong) * 2;
         }
+
+        DrawFillRect(locX, locY) {
+            let c = document.getElementById("myCanvas");
+            let ctx = c.getContext("2d");
+            ctx.fillRect(locX, locY, this.dai, this.rong);
+        }
+
+        DrawStrokeRect(locX, locY) {
+            let c = document.getElementById("myCanvas");
+            let ctx = c.getContext("2d");
+            ctx.lineWidth = "3";
+            ctx.strokeStyle = "red";
+            ctx.strokeRect(locX, locY, this.dai, this.rong);
+        }
+
     }
 
     let demoRectangle = new Rectangle(50, 100);
-    let c = document.getElementById("myCanvas");
-    let ctx = c.getContext("2d");
-    ctx.fillRect(50, 50, demoRectangle.getDai(), demoRectangle.getRong());
-    ctx.lineWidth = "3";
-    ctx.strokeStyle = "red";
-    ctx.strokeRect(5, 5, 100, 200);
-    ctx.lineWidth = "25";
-    ctx.lineJoin = "bevel";
-    ctx.strokeStyle = "blue";
-    ctx.strokeRect(150, 200, demoRectangle.getDai(), demoRectangle.getRong());
-    ctx.lineJoin = "round";
-    ctx.lineWidth = "45";
-    ctx.strokeStyle = "green";
-    ctx.strokeRect(250, 50, demoRectangle.getDai(), demoRectangle.getRong());
-
+    demoRectangle.DrawFillRect(50,50);
+    demoRectangle.DrawStrokeRect(150, 150);
 
 </script>
 </body>
