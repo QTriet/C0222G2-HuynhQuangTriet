@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let dai = parseInt(prompt("Nhap chieu dai hinh chu nhat"));
+    let rong = parseInt(prompt("Nhap chieu rong hinh chu nhat"));
+    for (let i = 0; i < dai; i++) {
+        if (i==0 || i == dai-1) {
+            for (let j = 0; j < rong-1 ; j++) {
+                document.write("*");
+            }
+
+        }
+        else {
+            for (let j = 0; j < rong ; j++) {
+                if (j==0 || j== rong-2) {
+                    document.write("*");
+                }
+                else {
+                    document.write("&nbsp&nbsp");
+                }
+            }
+        }
+        document.write("<br>");
+    }
+</script>
+</body>
+</html>

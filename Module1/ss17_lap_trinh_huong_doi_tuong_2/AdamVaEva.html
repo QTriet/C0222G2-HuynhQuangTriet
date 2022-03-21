@@ -22,7 +22,7 @@
         }
 
         isEmpty() {
-            if (this.weight>0) {
+            if (this.weight > 0) {
                 return false;
             }
             else {
@@ -63,20 +63,24 @@
             if (gender) {
                 document.write("I am a MAN!");
                 document.write("<br>");
-            }
-            else {
+            } else {
                 document.write("I am a WOMAN!");
                 document.write("<br>");
             }
         }
 
         checkApple(apple) {
-             return apple.getWeight();
+            if (apple.getWeight() > 0) {
+                return true;
+            } else {
+                return false;
+            }
 
         }
 
         eat(apple) {
-            setTimeout(apple.decrease(),4*1000);
+            apple.decrease();
+            this.weight = this.getWeight() + 1;
         }
 
         say(message) {
@@ -91,37 +95,40 @@
 
     eva.setName("EVA");
     eva.setGender(false);
-    eva.say("My Name is: " +eva.getName());
+    eva.say("My Name is: " + eva.getName());
     eva.setWeight(46);
-    eva.say("My weight is: " +eva.getWeight());
+    eva.say("My weight is: " + eva.getWeight());
     eva.say("I have an apple!");
-    eva.say("The apple is: "+eva.checkApple(demoApple)+" gram");
+    eva.say("Is this apple eatable? " + eva.checkApple(demoApple));
 
     adam.setName("ADAM");
     adam.setGender(true);
-    adam.say("My Name is: " +adam.getName());
+    adam.say("I am male? "+adam.isMale());
+    adam.say("My Name is: " + adam.getName());
     adam.setWeight(70);
-    adam.say("My weight is: " +adam.getWeight());
-    adam.say("I have a pen!");
-    adam.say("We are a couple <3");
+    adam.say("My weight is: " + adam.getWeight());
 
     eva.say("Let eat my apple!")
-    while (demoApple.getWeight()>0) {
+
+    while (demoApple.getWeight() > 0) {
         adam.eat(demoApple);
         adam.say("Your apple is sweat!")
-        if (demoApple.getWeight()>0) {
+
+        document.write("Adam's weight: " + adam.getWeight());
+        document.write("<br>");
+        if (demoApple.getWeight() > 0) {
             eva.eat(demoApple);
+            document.write("Adam's weight: " + eva.getWeight());
+            document.write("<br>");
             eva.say("Oh yeah!")
         }
-        document.write("The apple is: "+adam.checkApple(demoApple));
+        document.write("Is this apple eatable?: " + adam.checkApple(demoApple));
         document.write("<br>");
 
-        if (demoApple.isEmpty()){
+        if (demoApple.isEmpty()) {
             document.write("Adam and Eve ate an apple :)")
         }
     }
-
-
 
 
 </script>
