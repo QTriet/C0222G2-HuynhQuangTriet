@@ -5,6 +5,28 @@
     <title>Title</title>
 </head>
 <body>
-
+<script>
+    let canh1 = parseInt(prompt("Nhap chieu dai canh goc vuong tam giac thu 1"));
+    let canh2 = parseInt(prompt("Nhap chieu dai canh goc vuong tam giac thu 2"));
+    let spaceCount = 0
+    for (let i = 0; i < canh1; i++) {
+        if (i == canh1 - 1) {
+            for (let j = 0; j < canh2 - 1; j++) {
+                document.write("*");
+            }
+        } else if (i == 0) {
+            document.write("*");
+        } else {
+            document.write("*");
+            for (let j = 0; j < spaceCount ;j++) {
+                document.write("&nbsp&nbsp");
+                console.log(111);
+            }
+            document.write("*");
+            spaceCount++;
+        }
+        document.write("<br>");
+    }
+</script>
 </body>
 </html>
