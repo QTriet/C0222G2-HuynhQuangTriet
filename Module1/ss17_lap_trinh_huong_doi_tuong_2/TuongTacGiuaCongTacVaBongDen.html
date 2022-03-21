@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class SwitchButton {
+        switchOn() {
+            this.status = true;
+        }
+        switchOff() {
+            this.status = false;
+        }
+        connectToLamp(lamp) {
+            if (this.status) {
+                lamp.turnOn();
+            }
+            else {
+                lamp.turnOff();
+            }
+        }
+    }
+
+    class ElectricLamp {
+        turnOn() {
+            this.status =true;
+            document.write(this.status);
+        }
+        turnOff() {
+            this.status = false;
+            document.write(this.status);
+        }
+    }
+
+    let testElectricLamp = new ElectricLamp();
+    let testSwitch = new SwitchButton();
+
+    for (let i = 1; i <11 ; i++) {
+        if (i%2==0){
+            setTimeout(testSwitch.switchOn(),4*1000);
+            testSwitch.connectToLamp(testElectricLamp);
+            document.write("<br>");
+        }
+        else {
+            setTimeout(testSwitch.switchOff(), 5*1000);
+            testSwitch.connectToLamp(testElectricLamp);
+            document.write("<br>");
+        }
+    }
+</script>
+</body>
+</html>
